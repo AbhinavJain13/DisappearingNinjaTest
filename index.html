@@ -16,6 +16,47 @@
         }
       </style>
 
+      <script>
+        $(document).ready(function()
+        {
+            drawImages();
+            // hideImages();
+            // restoreImages()
+            $(document).on("click", "button", restoreImages );
+            $(document).on("click", "img", hideImages);
+        });
+
+          var imgSrc= "http://www.spyderonlines.com/images/wallpapers/ninja-images/ninja-images-14.png"
+          function drawImages()
+          {
+            var images=[];
+            for(var i = 0; i<8; i++)
+            {
+              $('body').append("<img src="+imgSrc+">");
+            }
+          }
+
+
+        function hideImages()
+        {
+          console.log("Hello");
+          $('img').click(function()
+          {
+           $(this).hide("slow");
+         });
+      }
+
+        function restoreImages()
+        {
+          $('button').click(function()
+          {
+           $('img').show("fast");
+         });
+       }
+
+
+      </script>
+
     <button type="button" name="button">Show Ninjas!</button>
   </body>
 
